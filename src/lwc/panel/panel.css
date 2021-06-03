@@ -1,0 +1,17 @@
+.c-panel_docked-left {
+    background-color: #fafaf9;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.c-panel_docked-right {
+    background-color: #fafaf9;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+}

@@ -1,0 +1,37 @@
+<template>
+    <div style="border: solid 3px #f2f2f2; border-radius: 0.25em"> 
+        <header class={panelButtonDockedClasses} style="z-index:1">
+            <lightning-button-icon-stateful 
+                icon-name={iconName} 
+                size={iconSize} 
+                variant={iconVariant}
+                selected={panelButtonState}
+                onclick={togglePanel}>
+            </lightning-button-icon-stateful>
+        </header>
+        <div class={panelDockedClass}>
+            <div class={panelClasses} aria-hidden="false">
+                <div class="slds-panel__header">
+                    <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title={panelHeader}>
+                        {panelHeader}
+                    </h2>
+                    <div class="slds-panel__header-actions">
+                        <slot name="actions"></slot>
+                        <lightning-button-icon 
+                            icon-name="utility:close" 
+                            size="medium" 
+                            variant="bare"
+                            onclick={togglePanel}>
+                        </lightning-button-icon>
+                    </div>
+                </div>
+                <div class="slds-panel__body">
+                    <slot name="panel"></slot>
+                </div>
+            </div>
+            <div class="slds-col slds-var-p-around_medium">
+                <slot name="content"></slot>
+            </div>
+        </div>
+    </div>
+</template>
